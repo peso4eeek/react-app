@@ -1,16 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
+import About from './About';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Hello World!
-        </p>
-      </header>
-    </div>
+    <HashRouter>  
+      <nav>
+        <Link to="/">Главная</Link> | <Link to="/about">О нас</Link>
+      </nav>
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
